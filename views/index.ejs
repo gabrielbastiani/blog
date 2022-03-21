@@ -1,5 +1,28 @@
 <%- include ('partials/header.ejs') %>
+<%- include ('partials/homenavbar.ejs') %>
+
 <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+        <hr>
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Bem Vindo</h1>
+            <p class="col-md-8 fs-4">Usando uma série de utilitários, você pode criar este jumbotron, assim como o das versões anteriores do Bootstrap. Confira os exemplos abaixo de como você pode remixá-lo e reestilizar ao seu gosto.</p>
+            <hr class="my-4">
+            <p>Descrição detalhada aqui</p>
+            <button class="btn btn-primary btn-lg" type="button">Botão de exemplo</button>
+          </div>
+        <hr>
+        <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header">
+                <h2><%= article.title %></h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= article.slug %>" class="btn btn-success">Ler Artigo</a>
+            </div>
+        </div>
+        <br>
+        <% }) %>
+    </div>
 </body>
 <%- include ('partials/footer.ejs') %>
